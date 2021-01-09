@@ -22,10 +22,10 @@ with open(file_to_read, newline="", encoding="utf-8") as elections:
     csv_reader = csv.reader(elections, delimiter=",")
 
     # skip the header labels
-    header = next(csvreader)
+    header = next(csv_reader)
 
     # iterate through rows
-    for row in csvreader:
+    for row in csv_reader:
 
         # count voter ID
         total_votes +=1
@@ -37,11 +37,11 @@ with open(file_to_read, newline="", encoding="utf-8") as elections:
             vote_correy +=1
         elif row [2] == "Li":
             vote_li +=1
-        elif row [2] == "Otooley":
+        elif row [2] == "O'Tooley":
             vote_otooley +=1
 
 #creat dict
-candidates = ["Khan","Correy","Li","Otooley"]
+candidates = ["Khan","Correy","Li","O'Tooley"]
 votes = [vote_khan,vote_correy,vote_li,vote_otooley]
 
 # join lists and find winner
@@ -62,14 +62,14 @@ print(f"------------")
 print(f"Khan: {percent_khan:.3f}% ({vote_khan})")
 print(f"Correy: {percent_correy:.3f}% ({vote_correy})")
 print(f"Li: {percent_li:.3f}% ({vote_li})")
-print(f"Otooley: {percent_otooley:.3f}% ({vote_otooley})")
+print(f"O'Tooley: {percent_otooley:.3f}% ({vote_otooley})")
 print(f"------------")
 print(f"Winner: {key}")
 print(f"------------")
 
 # output
-output_file = path.("Python-Challenge","PyPoll", "Election_results_Summary.txt")
-with open(output_file, "w") as file:
+filepath = os.path.join("Analysis","Election_results_Summary.txt")
+with open(filepath, "w") as file:
 # write
     file.write(f"Election Results")
     file.write("\n")
@@ -84,10 +84,11 @@ with open(output_file, "w") as file:
     file.write("\n")
     file.write(f"Li: {percent_li:.3f}%({vote_li})")
     file.write("\n")
-    file.write(f"Otooley: {percent_otooley:.3f}%({vote_otooley})")
+    file.write(f"O'Tooley: {percent_otooley:.3f}%({vote_otooley})")
     file.write("\n")
     file.write(f"------------")
     file.write("\n")
     file.write(f"winner: {key}")
     file.write("\n")
     file.write(f"------------")
+    file.close()

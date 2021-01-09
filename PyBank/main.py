@@ -58,19 +58,21 @@ print(f"Largest Profit Increase: {months[largest_increase_month]}(${(str(largest
 print(f"Largest Profit Decrease: {months[largest_decrease_month]}(${(str(largest_decrease))}")
 
 #output 1
-file = 'Python-Challenge\PyBank\Financial_analysis.txt'
+output_file = 'Python-Challenge\PyBank\Financial_analysis.txt'
+with open(output_file, "w") as file:
+
 #output 2
-file.write("Financial Analysis")
-file.write("\n")
-file.write("--------------------")
-file.write("\n")
-file.write(f"Months: {len(months)}")
-file.write("\n")
-file.write(f"total: ${sum(total_profit)}")
-file.write("\n")
-file.write(f"Average Change: {round(sum(monthly_profit_change)/len(monthly_profit_change),2)}")
-file.write("\n")
-file.write(f"Greatest Increase in Profits: {months[max_increase_month]} (${(str(max_increase_value))})")
-file.write("\n")
-file.write(f"Greatest Decrease in Profits: {months[max_decrease_month]} (${(str(max_decrease_value))})")
-file.close()
+    file.write("Financial Analysis")
+    file.write("\n")
+    file.write("--------------------")
+    file.write("\n")
+    file.write(f"Months: {len(months)}")
+    file.write("\n")
+    file.write(f"total: ${sum(total_profit)}")
+    file.write("\n")
+    file.write(f"Average Change: {round(sum(monthly_profit_change)/len(monthly_profit_change),2)}")
+    file.write("\n")
+    file.write(f"Greatest Increase in Profits: {months[max_increase_month]} (${(str(max_increase_value))})")
+    file.write("\n")
+    file.write(f"Greatest Decrease in Profits: {months[max_decrease_month]} (${(str(max_decrease_value))})")
+    file.close()
