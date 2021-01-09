@@ -78,6 +78,7 @@ with open(filepath, "w") as file:
     file.write(f"total votes: {total_votes}")
     file.write("\n")
     file.write(f"------------")
+    file.write("\n")
     file.write(f"Khan: {percent_khan:.3f}%({vote_khan})")
     file.write("\n")
     file.write(f"Correy: {percent_correy:.3f}%({vote_correy})")
